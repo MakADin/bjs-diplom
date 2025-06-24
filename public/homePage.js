@@ -41,8 +41,8 @@ myMoney.addMoneyCallback = (data) => {
       ProfileWidget.showProfile(response.data);
     }
     response.success ?
-      myFavoritesWidget.setMessage(response.success, 'Баланс успешно пополнен') :
-      myFavoritesWidget.setMessage(response.success, response.error);
+      myMoney.setMessage(response.success, 'Баланс успешно пополнен') :
+      myMoney.setMessage(response.success, response.error);
   });
 };
 
@@ -51,9 +51,9 @@ myMoney.conversionMoneyCallback = (data) => {
 
     if (response.success) {
       ProfileWidget.showProfile(response.data);
-      myFavoritesWidget.setMessage(response.success, 'Конвертация валюты успешно выполнена');
+      myMoney.setMessage(response.success, 'Конвертация валюты успешно выполнена');
     } else {
-      myFavoritesWidget.setMessage(response.success, response.error);
+      myMoney.setMessage(response.success, response.error);
     }
   })
 }
@@ -63,9 +63,9 @@ myMoney.sendMoneyCallback = (data) => {
 
     if (response.success) {
       ProfileWidget.showProfile(response.data);
-      myFavoritesWidget.setMessage(response.success, 'Перевод успешно выполнен');
+      myMoney.setMessage(response.success, 'Перевод успешно выполнен');
     } else {
-      myFavoritesWidget.setMessage(response.success, response.error);
+      myMoney.setMessage(response.success, response.error);
     }
   })
 }
